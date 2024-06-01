@@ -1,0 +1,31 @@
+{
+  "name": "url_shorter",
+  "version": "1.0.0",
+  "description": "url shorter",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sankar-raul/url_shorter.git"
+  },
+  "keywords": [
+    "url_shorter"
+  ],
+  "author": "github.com/sankar-raul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sankar-raul/url_shorter/issues"
+  },
+  "homepage": "https://github.com/sankar-raul/url_shorter#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.8",
+    "nodemon": "^3.1.1",
+    "path": "^0.12.7",
+    "uuid": "^9.0.1"
+  }
+}

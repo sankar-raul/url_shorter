@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::spelling-error {
+    text-decoration: none;
+}
+body {
+    background: #0002;
+}
+.heading {
+    font-size: 1.7rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px;
+    /* display: inline-block; */
+}
+.nav-bar {
+    background-color: rgba(4, 174, 163, 1);
+    color: rgb(228, 226, 213);
+    position: relative;
+    height: 60px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+form {
+    width: clamp(300px, 65%, 600px);
+    margin: 0 auto;
+    margin-top: 200px;
+    position: relative;
+    border: none;
+    box-shadow: 0px 1px 82px 1px #0002;
+}
+#url:focus {
+    outline: 1px solid rgba(255, 255, 255, 0.171);
+}
+#url {
+    height: 50px;
+    width: 100%;
+    border: none;
+    outline: 1px solid rgba(152, 152, 152, 0.171);
+    padding: 5px calc(15% + 5px) 5px 5px;
+    font-size: 1.05rem;
+}
+.effect {
+    height: 50px;
+    width: 15%;
+    position: absolute;
+    right: 0;
+    transform: translateY(-100%);
+    overflow: hidden;
+}
+.short-btn:focus {
+    outline: none;
+}
+.short-btn {
+    background: rgba(4, 174, 163, 0.85);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+.loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    aspect-ratio: 1 / 2;
+    width: 30%;
+    animation: loader 2s linear infinite;
+}
+.loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: 1 / 2;
+    width: 100%;
+    transform: rotate(120deg);
+    border-radius: 50%;
+    border: 2px solid rgb(255, 255, 255);
+}
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: 1 / 2;
+    width: 100%;
+    transform: rotate(240deg);
+    border-radius: 50%;
+    border: 2px solid rgb(255, 255, 255);
+}
+@keyframes loader {
+   0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+   } 100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+   }
+}
+.author {
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.127);
+}
