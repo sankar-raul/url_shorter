@@ -107,3 +107,9 @@ form {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.127);
 }
+.short-url {
+    background: #ffffff;
+    width: clamp(300px, 65%, 600px);
+    height: 70px;
+    margin: 20px auto;
+}

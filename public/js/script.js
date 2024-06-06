@@ -6,7 +6,7 @@ const loader = document.getElementsByClassName('loading')
 const shortBtn = document.getElementsByClassName('short-btn')
 loader[0].style.display = 'none'
 shortBtn[0].value = 'short'
-urlBox[0].style.display = "none"
+// urlBox[0].style.display = "none"
 url.addEventListener('mouseover', (e) => {
     url.focus()
 })
