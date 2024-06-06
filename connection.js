@@ -5,6 +5,7 @@ const connection = mysql2.createConnection({
     user: process.env.USER,
     database: process.env.DB,
     password: process.env.PASSWORD,
+    port: process.env.DBPORT || 3306,
 })
 connection.connect(err => {
     console.log(err ? "mysql connection failed " + err : "mysql connected")
