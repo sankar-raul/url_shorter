@@ -6,7 +6,7 @@ const loader = document.getElementsByClassName('loading')
 const shortBtn = document.getElementsByClassName('short-btn')
 loader[0].style.display = 'none'
 shortBtn[0].value = 'short'
-// urlBox[0].style.display = "none"
+urlBox[0].style.display = "none"
 url.addEventListener('mouseover', (e) => {
     url.focus()
 })
@@ -34,7 +34,10 @@ form.addEventListener('submit', async (e) => {
         const data = await response.json()
         shorten.href = location.href + data.id
         shorten.innerHTML = location.href + data.id
-        urlBox[0].style.display = "block"
+        urlBox[0].style.display = "none"
+        setTimeout(() => {
+            urlBox[0].style.display = "grid"
+        }, 0)
     } else {
         urlBox[0].style.display = "none"
         alert("Enter a valid url")

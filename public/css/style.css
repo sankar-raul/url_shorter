@@ -30,6 +30,8 @@ form {
     position: relative;
     border: none;
     box-shadow: 0px 1px 82px 1px #0002;
+    border-radius: 5px;
+    animation: 1s ease apear;
 }
 #url:focus {
     outline: 1px solid rgba(255, 255, 255, 0.171);
@@ -38,9 +40,10 @@ form {
     height: 50px;
     width: 100%;
     border: none;
-    outline: 1px solid rgba(152, 152, 152, 0.171);
+    outline: 1px solid rgba(125, 86, 86, 0.171);
     padding: 5px calc(15% + 5px) 5px 5px;
     font-size: 1.05rem;
+    border-radius: 5px;
 }
 .effect {
     height: 50px;
@@ -58,6 +61,7 @@ form {
     height: 100%;
     position: absolute;
     width: 100%;
+    border-radius: 5px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: none;
     color: rgb(255, 255, 255);
@@ -110,6 +114,49 @@ form {
 .short-url {
     background: #ffffff;
     width: clamp(300px, 65%, 600px);
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) 4fr;
+    align-items: center;
     height: 70px;
     margin: 20px auto;
+    animation: 1s ease apear;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+.shorten-box {
+    overflow: hidden;
+    display: grid;
+    /* flex-wrap: nowrap; */
+    align-items: center;
+    padding: 7px;
+    border-left: 1px solid rgba(0, 195, 195, 0.395);
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.batch {
+    font-size: 1rem;
+    justify-self: center;
+    border-right: 1px solid rgb(0, 183, 193);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#shorten {
+    width: 100%;
+    padding: 4px;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 5px;
+    background: rgba(4, 174, 163, 0.15);
+    /* text-overflow: ellipsis; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: scroll;
+}
+@keyframes apear {
+    from {
+        opacity: 0;
+        transform: translateY(50%);
+    } to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
 }
