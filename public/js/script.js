@@ -49,10 +49,11 @@ form.addEventListener('submit', async (e) => {
 })
 copyButton.onclick = ()  => {
     navigator.clipboard.writeText(shorten.href).then(() => {
-        console.log("copied")
+        copyButton.title = "copied"
         copyIcon.src = '/res/check.svg'
         setTimeout(() => {
             copyIcon.src = '/res/copy-icon.svg'
+            copyButton.title = "copy"
         }, 2000)
     }).catch((data) => {
         alert("Copy opreration failed")
