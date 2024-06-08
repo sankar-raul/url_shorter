@@ -6,6 +6,9 @@
 ::spelling-error {
     text-decoration: none;
 }
+:root {
+    --shorten-box-bg: rgba(110, 222, 215, 0.15);
+}
 body {
     background: #0002;
 }
@@ -121,12 +124,12 @@ form {
     margin: 20px auto;
     animation: 1s ease apear;
     font-size: 1.2rem;
-    border-radius: 5px;
 }
 .shorten-box {
     overflow: hidden;
     display: grid;
     /* flex-wrap: nowrap; */
+    grid-template-columns: 8fr 30px;
     align-items: center;
     padding: 7px;
     border-left: 1px solid rgba(0, 195, 195, 0.395);
@@ -134,22 +137,58 @@ form {
 ::-webkit-scrollbar {
     display: none;
 }
+.copy-button {
+    padding: 5px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    outline: none;
+    border: none;
+    aspect-ratio: 1 / 1;
+    background: var(--shorten-box-bg);
+}
+.copy-button > img {
+    width: 70%;
+}
+.copy-button:hover {
+    border: 2px solid rgba(0, 195, 195, 0.395);
+}
 .batch {
     font-size: 1rem;
     justify-self: center;
-    border-right: 1px solid rgb(0, 183, 193);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 #shorten {
     width: 100%;
-    padding: 4px;
+    padding: 0px 0px;
+    border-right: 5px solid var(--shorten-box-bg);
+    border-left: 5px solid var(--shorten-box-bg);
     text-decoration: none;
     white-space: nowrap;
-    border-radius: 5px;
-    background: rgba(4, 174, 163, 0.15);
+    border-radius: 5px 0px 0px 5px;
+    background: var(--shorten-box-bg);
     /* text-overflow: ellipsis; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: scroll;
+    overflow-y: hidden;
+}
+#shorten::-webkit-scrollbar {
+    height: 3px;
+    background-color: rgba(0, 0, 0, 0.075);
+    position: absolute;
+}
+#shorten:hover::-webkit-scrollbar {
+    display: block;
+}
+#shorten::-webkit-scrollbar-button {
+    background-color: #000000;
+    width: 2px;
+}
+#shorten::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+#shorten, .copy-button {
+    height: 100%;
 }
 @keyframes apear {
     from {

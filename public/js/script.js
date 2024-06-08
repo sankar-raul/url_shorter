@@ -4,9 +4,10 @@ const shorten = document.getElementById('shorten')
 const urlBox = document.getElementsByClassName('short-url')
 const loader = document.getElementsByClassName('loading')
 const shortBtn = document.getElementsByClassName('short-btn')
+const copyButton = document.getElementsByClassName('copy-button')[0]
+const copyIcon = document.querySelector(".copy-button > img")
 loader[0].style.display = 'none'
 shortBtn[0].value = 'short'
-urlBox[0].style.display = "none"
 url.addEventListener('mouseover', (e) => {
     url.focus()
 })
@@ -46,3 +47,15 @@ form.addEventListener('submit', async (e) => {
     }
 }
 })
+copyButton.onclick = ()  => {
+    navigator.clipboard.writeText(shorten.href).then(() => {
+        console.log("copied")
+        copyIcon.src = '/res/check.svg'
+        setTimeout(() => {
+            copyIcon.src = '/res/copy-icon.svg'
+        }, 2000)
+    }).catch((data) => {
+        alert("Copy opreration failed")
+    })
+    // alert();
+}
