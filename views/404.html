@@ -18,7 +18,10 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-top: 25%;
+        margin-top: clamp(200px, 25%, 300px);
+    }
+    h1:hover {
+        color: #fff;
     }
       .msg, h1 {
             font-size: 6rem;
@@ -30,6 +33,64 @@
             font-size: 1rem;
             margin-top: 0px;
             color: rgba(70, 75, 88, 1);
+            animation: flash 1s steps(10) infinite;
+        }
+        .msg:hover {
+            color: var(--color);
+            text-shadow: var(--shadow);
+            animation: none;
+        }
+        :root {
+            --color: rgb(214, 220, 255, 0.34);
+            --shadow: 1px -2px 20px rgb(19, 21, 21), 0px 2px 200px rgb(255, 40, 126);
+        }
+        @keyframes flash {
+            0%,100% {
+                color: var(--color);
+                text-shadow: var(--shadow);
+            } 10% {
+                color: rgba(50, 55, 68, 1);
+                text-shadow: none;
+            } 20% {
+                color: rgba(50, 55, 68, 1);
+                text-shadow: none;
+            } 30% {
+                color: rgba(50, 55, 68, 1);
+                text-shadow: none;
+            } 40% {
+                color: var(--color);
+                text-shadow: var(--shadow);
+            } 50% {
+                color: rgba(50, 55, 68, 1);
+                text-shadow: none;
+            } 60% {
+                color: rgba(50, 55, 68, 1);
+                text-shadow: none;
+            } 70% {
+                color: rgba(50, 55, 68, 1);
+                text-shadow: none;
+            } 80% {
+                color: var(--color);
+                text-shadow: var(--shadow);
+            } 90% {
+                color: rgba(50, 55, 68, 1);
+                text-shadow: none;
+            }
+        }
+        h1 {
+            animation: blink 1s steps(3) infinite;
+        }
+        @keyframes blink {
+            0%, 100% {
+                text-shadow: 0px 0px 350px rgb(255, 255, 255, 0.3);
+                color: rgba(50, 55, 68, 1);
+            } 33% {
+                text-shadow: 0px 0px 300px rgb(255, 57, 90,0.7);
+                color: rgba(80, 85, 98, 1);
+            } 66% {
+                color: rgba(50, 55, 68, 1);
+                text-shadow: 0px 0px 200px rgb(43, 43, 255);
+            }
         }
     </style>
 </head> 
