@@ -38,7 +38,7 @@ form.addEventListener('submit', async (e) => {
         urlBox[0].style.display = "none"
         setTimeout(() => {
             urlBox[0].style.display = "grid"
-        }, 0)
+        }, 20)
     } else {
         urlBox[0].style.display = "none"
         alert("Enter a valid url")
