@@ -69,6 +69,7 @@ form {
     border: none;
     color: rgb(255, 255, 255);
     font-weight: 600;
+    cursor: pointer;
 }
 .loading {
     position: absolute;
@@ -138,6 +139,7 @@ form {
     display: none;
 }
 .copy-button {
+    cursor: pointer;
     padding: 5px;
     display: grid;
     align-items: center;
