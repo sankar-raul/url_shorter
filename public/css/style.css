@@ -143,15 +143,19 @@ form {
     align-items: center;
     justify-items: center;
     outline: none;
-    border: none;
+    border: 2px solid transparent;
     aspect-ratio: 1 / 1;
     background: var(--shorten-box-bg);
 }
 .copy-button > img {
     width: 70%;
 }
+.copy-button:active {
+    background-color: rgba(4, 174, 163, 0.05);
+    border: 2px solid transparent;
+}
 .copy-button:hover {
-    border: 2px solid rgba(0, 195, 195, 0.395);
+    border: 2px solid rgba(0, 195, 195, 0.151);
 }
 .batch {
     font-size: 1rem;
