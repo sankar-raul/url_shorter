@@ -32,10 +32,10 @@ form.addEventListener('submit', async (e) => {
             loader[0].style.display = 'none'
             shortBtn[0].value = 'short'
         }, 1000)
+        urlBox[0].style.display = "none"
         const data = await response.json()
         shorten.href = location.href + data.id
         shorten.innerHTML = location.href + data.id
-        urlBox[0].style.display = "none"
         setTimeout(() => {
             urlBox[0].style.display = "grid"
         }, 20)
