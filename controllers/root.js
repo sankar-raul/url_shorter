@@ -1,4 +1,5 @@
 const db = require('../connection')
+const path = require('path')
 const handleRedirect = (req, res) => {
     const id = req.params.id
     db.query(`select url from urls where id = ?`, id, (err, result) => {
@@ -7,7 +8,7 @@ const handleRedirect = (req, res) => {
             return res.status(500).json({error: "data fetching error"})
         }
         if (result.length == 0) {
-            return res.status(404).json({error: "404 not found"})
+            return res.status(404).sendFile(path.join(__dirname, "..", "views", "404.html"))
         }
         res.redirect(result[0].url)
     })
