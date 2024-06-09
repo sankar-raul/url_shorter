@@ -7,20 +7,21 @@
     text-decoration: none;
 }
 :root {
-    --shorten-box-bg: rgba(110, 222, 215, 0.15);
+    --shorten-box-bg: #58a9ff0f;
 }
 body {
-    background: #0002;
+    background: #0F0F0F;
 }
 .heading {
     font-size: 1.7rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding: 10px;
-    /* display: inline-block; */
+    display: flex;
+    align-items: center;
+    padding-left: 3vw;
 }
 .nav-bar {
-    background-color: rgba(4, 174, 163, 1);
-    color: rgb(228, 226, 213);
+    background-color: rgba(0, 17, 62, 0.51);
+    color: #f0f0f0;
     position: relative;
     height: 60px;
     display: grid;
@@ -36,14 +37,20 @@ form {
     border-radius: 5px;
     animation: 1s ease apear;
 }
+input::spelling-error {
+    text-decoration: none;
+}
 #url:focus {
-    outline: 1px solid rgba(255, 255, 255, 0.171);
+    outline: 1px solid #0053ac;
 }
 #url {
     height: 50px;
+    caret-color: #f0f0f0;
+    color: #f0f0f0f0;
     width: 100%;
+    background: #121212;
     border: none;
-    outline: 1px solid rgba(125, 86, 86, 0.171);
+    outline: 1px solid #121313;
     padding: 5px calc(15% + 5px) 5px 5px;
     font-size: 1.05rem;
     border-radius: 5px;
@@ -59,17 +66,24 @@ form {
 .short-btn:focus {
     outline: none;
 }
+::placeholder {
+    color: rgba(163, 200, 255, 0.245);
+}
 .short-btn {
-    background: rgba(4, 174, 163, 0.85);
+    background: #151515;
     height: 100%;
     position: absolute;
     width: 100%;
     border-radius: 5px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: none;
-    color: rgb(255, 255, 255);
+    color: #f0f0f0;
     font-weight: 600;
     cursor: pointer;
+}
+.short-btn:hover, .short-btn:active, .short-btn:focus {
+    border: 2px solid rgba(69, 78, 202, 0.1);
+    background-color: #161616;
 }
 .loading {
     position: absolute;
@@ -113,10 +127,12 @@ form {
 }
 .author {
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.127);
+    display: flex;
+    align-items: center;
 }
 .short-url {
-    background: #ffffff;
+    background: #121212;
+    color: #f0f0f0;
     width: clamp(300px, 65%, 600px);
     display: grid;
     grid-template-columns: minmax(100px, 1fr) 4fr;
@@ -133,7 +149,7 @@ form {
     grid-template-columns: 8fr 30px;
     align-items: center;
     padding: 7px;
-    border-left: 1px solid rgba(0, 195, 195, 0.395);
+    border-left: 1px solid #0052a9;
 }
 ::-webkit-scrollbar {
     display: none;
@@ -147,7 +163,7 @@ form {
     outline: none;
     border: 2px solid transparent;
     aspect-ratio: 1 / 1;
-    background: var(--shorten-box-bg);
+    background-color: transparent;
 }
 .copy-button > img {
     width: 70%;
@@ -157,7 +173,7 @@ form {
     border: 2px solid transparent;
 }
 .copy-button:hover {
-    border: 2px solid rgba(0, 195, 195, 0.151);
+    border: 2px solid #0050a5;
 }
 .batch {
     font-size: 1rem;
@@ -166,35 +182,43 @@ form {
 }
 #shorten {
     width: 100%;
-    padding: 0px 0px;
-    border-right: 5px solid var(--shorten-box-bg);
-    border-left: 5px solid var(--shorten-box-bg);
+    border-right: 5px solid #58a9ff01;
+    border-left: 5px solid #58a9ff01;
     text-decoration: none;
     white-space: nowrap;
+    color: #007bff;
     border-radius: 5px 0px 0px 5px;
-    background: var(--shorten-box-bg);
     /* text-overflow: ellipsis; */
+    background-repeat: repeat-x;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow-x: scroll;
-    overflow-y: hidden;
 }
-#shorten::-webkit-scrollbar {
+.shorten-box > div:nth-child(1)::-webkit-scrollbar {
     height: 3px;
-    background-color: rgba(0, 0, 0, 0.075);
-    position: absolute;
+    background-color: #2c92ff25;
 }
-#shorten:hover::-webkit-scrollbar {
+.shorten-box > div:nth-child(1):hover::-webkit-scrollbar {
     display: block;
 }
-#shorten::-webkit-scrollbar-button {
-    background-color: #000000;
-    width: 2px;
+.shorten-box > div:nth-child(1)::-webkit-scrollbar-button {
+    background-color: #004fa3;
+    width: clamp(2px, 2%, 10px);
 }
-#shorten::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.4);
+.shorten-box > div:nth-child(1)::-webkit-scrollbar-thumb {
+    background-color: #5cabff50;
 }
 #shorten, .copy-button {
     height: 100%;
+}
+.shorten-box  div {
+    height: 110%;
+    display: flex;
+    align-items: center;
+    background: var(--shorten-box-bg);
+    justify-content: center;
+}
+.shorten-box > div:nth-child(1) {
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 @keyframes apear {
     from {
