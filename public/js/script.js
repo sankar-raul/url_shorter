@@ -17,7 +17,7 @@ form.addEventListener('submit', async (e) => {
     loader[0].style.display = 'block'
     shortBtn[0].value = ''
     e.preventDefault()
-    url.value = url.value.trim()
+    shortBtn[0].focus()
     if (!isShorted) {
     if (valid.test(url.value.trim())) {
         try {

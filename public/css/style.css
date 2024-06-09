@@ -52,7 +52,8 @@ input::spelling-error {
     border: none;
     outline: 1px solid #121313;
     padding: 5px calc(15% + 5px) 5px 5px;
-    font-size: 1.05rem;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
     border-radius: 5px;
 }
 .effect {
@@ -82,7 +83,7 @@ input::spelling-error {
     cursor: pointer;
 }
 .short-btn:hover, .short-btn:active, .short-btn:focus {
-    border: 2px solid rgba(69, 78, 202, 0.1);
+    border: 2px solid #0059b8;
     background-color: #161616;
 }
 .loading {
@@ -219,6 +220,10 @@ input::spelling-error {
 .shorten-box > div:nth-child(1) {
     overflow-x: scroll;
     overflow-y: hidden;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #121212 inset;
+    -webkit-text-fill-color: #f0f0f0f0;
 }
 @keyframes apear {
     from {
