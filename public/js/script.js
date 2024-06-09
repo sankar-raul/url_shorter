@@ -19,6 +19,7 @@ form.addEventListener('submit', async (e) => {
     e.preventDefault()
     if (!isShorted) {
     if (valid.test(url.value.trim())) {
+        try {
         const response = await fetch("/short", {
             method: "POST",
             headers: {
@@ -31,7 +32,7 @@ form.addEventListener('submit', async (e) => {
             isShorted = false
             loader[0].style.display = 'none'
             shortBtn[0].value = 'short'
-        }, 1000)
+        }, 500)
         urlBox[0].style.display = "none"
         const data = await response.json()
         shorten.href = location.href + data.id
@@ -39,6 +40,12 @@ form.addEventListener('submit', async (e) => {
         setTimeout(() => {
             urlBox[0].style.display = "grid"
         }, 20)
+    } catch (err) {
+        isShorted = false
+        loader[0].style.display = 'none'
+        shortBtn[0].value = 'short'
+        console.log(err)
+    }
     } else {
         urlBox[0].style.display = "none"
         alert("Enter a valid url")
@@ -50,13 +57,19 @@ form.addEventListener('submit', async (e) => {
 copyButton.onclick = ()  => {
     navigator.clipboard.writeText(shorten.href).then(() => {
         copyButton.title = "copied"
-        copyIcon.src = '/res/check.svg'
+        copyIcon.src = copiedCheckPreload.src
         setTimeout(() => {
             copyIcon.src = '/res/copy-icon.svg'
             copyButton.title = "copy"
         }, 2000)
     }).catch((data) => {
+        console.log(data)
         alert("Copy opreration failed")
     })
     // alert();
 }
+var copiedCheckPreload
+window.addEventListener('load', () => {
+    copiedCheckPreload = new Image()
+    copiedCheckPreload.src = '/res/check.svg'
+})
