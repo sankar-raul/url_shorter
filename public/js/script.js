@@ -45,6 +45,7 @@ form.addEventListener('submit', async (e) => {
         loader[0].style.display = 'none'
         shortBtn[0].value = 'short'
         console.log(err)
+        setTimeout(() => alert("Network Error!", 10))
     }
     } else {
         urlBox[0].style.display = "none"
@@ -62,8 +63,8 @@ copyButton.onclick = ()  => {
             copyIcon.src = '/res/copy-icon.svg'
             copyButton.title = "copy"
         }, 2000)
-    }).catch((data) => {
-        console.log(data)
+    }).catch((err) => {
+        console.log(err)
         alert("Copy opreration failed")
     })
     // alert();
