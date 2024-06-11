@@ -179,7 +179,7 @@ input::spelling-error {
     grid-template-columns: 8fr 30px;
     align-items: center;
     padding: 7px;
-    border-left: 1px solid #0052a9;
+    border-left: 1px solid #ffffff30;
 }
 ::-webkit-scrollbar {
     display: none;
