@@ -8,9 +8,13 @@
 }
 :root {
     --shorten-box-bg: #58a9ff0f;
+    --box-bg: #ffffff07;
+    --primary-text-color: #e6edf3;
+    --secondary-text-color: #8d96a0;
+    --link-color: #4493f8;
 }
 body {
-    background: #0F0F0F;
+    background: #0E1116;
 }
 .heading {
     font-size: 1.7rem;
@@ -20,8 +24,8 @@ body {
     padding-left: 3vw;
 }
 .nav-bar {
-    background-color: rgba(0, 17, 62, 0.51);
-    color: #f0f0f0;
+    background-color: #020409;
+    color: #e6edf3;
     position: relative;
     height: 60px;
     display: grid;
@@ -48,7 +52,7 @@ input::spelling-error {
     caret-color: #f0f0f0;
     color: #f0f0f0f0;
     width: 100%;
-    background: #121212;
+    background: var(--box-bg);
     border: none;
     outline: 1px solid #121313;
     padding: 5px calc(15% + 5px) 5px 5px;
@@ -64,14 +68,11 @@ input::spelling-error {
     transform: translateY(-100%);
     overflow: hidden;
 }
-.short-btn:focus {
-    outline: none;
-}
 ::placeholder {
-    color: rgba(163, 200, 255, 0.245);
+    color: #8d96a0;
 }
 .short-btn {
-    background: #151515;
+    background: var(--box-bg);
     height: 100%;
     position: absolute;
     width: 100%;
@@ -132,8 +133,8 @@ input::spelling-error {
     align-items: center;
 }
 .short-url {
-    background: #121212;
-    color: #f0f0f0;
+    background: var(--box-bg);
+    color: var(--primary-text-color);
     width: clamp(300px, 65%, 600px);
     display: grid;
     grid-template-columns: minmax(100px, 1fr) 4fr;
@@ -187,11 +188,11 @@ input::spelling-error {
     border-left: 5px solid #58a9ff01;
     text-decoration: none;
     white-space: nowrap;
-    color: #007bff;
+    color: var(--link-color);
     border-radius: 5px 0px 0px 5px;
     /* text-overflow: ellipsis; */
     background-repeat: repeat-x;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .shorten-box > div:nth-child(1)::-webkit-scrollbar {
     height: 3px;
