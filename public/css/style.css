@@ -145,16 +145,26 @@ input::spelling-error {
     flex-wrap: nowrap;
     overflow: hidden;
     align-items: center;
+    gap: 10px;
 }
-.author > .pic {
-    height: 55%;
+.nav-item {
+    height: 50%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    background-image: url('/res/developer.png');
     background-size: cover;
-    filter: grayscale(70%);
     transition: 0.5s;
     outline: 2px solid transparent;
+}
+.author > .github {
+    opacity: 0.7;
+    background-image: url('/res/github-icon.svg');
+}
+.author > .github:hover {
+    opacity: 1;
+}
+.author > .pic {
+    filter: grayscale(70%);
+    background-image: url('/res/developer.png');
 }
 .author > .pic:hover {
     outline: 2px solid #449eff;

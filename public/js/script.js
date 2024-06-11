@@ -76,6 +76,9 @@ window.addEventListener('load', () => {
     copiedCheckPreload = new Image()
     copiedCheckPreload.src = '/res/check.svg'
 })
+document.getElementsByClassName("github")[0].onclick =  () => {
+    window.open('https://github.com/sankar-raul/url_shorter')
+}
 document.getElementsByClassName('pic')[0].onclick = () => {
     window.open('https://github.com/sankar-raul')
 }
