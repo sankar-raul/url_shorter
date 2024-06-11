@@ -68,10 +68,33 @@ copyButton.onclick = ()  => {
         console.log(err)
         alert("Copy opreration failed")
     })
-    // alert();
 }
-var copiedCheckPreload
+var copiedCheckPreload, preloadCursorClicked
 window.addEventListener('load', () => {
+    preloadCursorClicked = new Image()
+    preloadCursorClicked.src = '/res/cursor-clicked.svg'
     copiedCheckPreload = new Image()
     copiedCheckPreload.src = '/res/check.svg'
 })
+document.getElementsByClassName('pic')[0].onclick = () => {
+    window.open('https://github.com/sankar-raul')
+}
+function clickFunc(element) {
+    element.target.style.cursor = `url(${preloadCursorClicked.src}), auto`
+    setTimeout(() => {
+        element.target.style.cursor = "url('/res/cursor.svg'), auto"
+    }, 100)
+}
+const elementsToClikAnim = [shortBtn[0], copyButton, shorten, document.getElementById("sankar")]
+elementsToClikAnim.forEach(el => {
+    el.addEventListener('click', e => clickFunc(e))
+    }
+)
+let clickTimeOut = null
+document.onclick = () => {
+    clickTimeOut ?? clearTimeout(clickTimeOut)
+    document.documentElement.style.cursor = `url(${preloadCursorClicked.src}), auto`
+    clickTimeOut = setTimeout(() => {
+        document.documentElement.style.cursor = "url('/res/cursor.svg'), auto"
+    }, 100)
+}
