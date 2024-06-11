@@ -92,6 +92,7 @@ input::spelling-error {
     cursor: url('/res/cursor.svg'), auto;
 }
 .short-btn:hover, .short-btn:active, .short-btn:focus {
+    outline: none;
     border: 2px solid #0059b8;
     background-color: var(--box-bg);
 }
@@ -146,17 +147,17 @@ input::spelling-error {
     align-items: center;
 }
 .author > .pic {
-    height: 65%;
+    height: 55%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-image: url('/res/developer.png');
     background-size: cover;
     filter: grayscale(70%);
     transition: 0.5s;
-    outline: 3px solid transparent;
+    outline: 2px solid transparent;
 }
 .author > .pic:hover {
-    outline: 3px solid #449eff;
+    outline: 2px solid #449eff;
     filter: grayscale(0%);
 }
 .short-url {

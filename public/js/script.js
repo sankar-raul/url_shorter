@@ -102,7 +102,7 @@ document.onclick = () => {
 // heart animation
 const footer = document.getElementsByTagName("footer")[0]
 let counter = 10
-footer.onmousemove = (e) => {
+footer.addEventListener('mousemove', (e) => {
     if (counter % 10 == 0) {
     const hueFilterValue = 360 - (30 * (Math.round(Math.random() * 12)))
     const heartCopy = document.createElement('img')
@@ -116,3 +116,21 @@ footer.onmousemove = (e) => {
     }
     counter++
 }
+)
+let count = 8
+footer.addEventListener('touchmove', (e) => {
+    if (count % 8 == 0) {
+    const hueFilterValue = 360 - (30 * (Math.round(Math.random() * 12)))
+    const heartCopy = document.createElement('img')
+    heartCopy.src = '/res/heart-icon.svg'
+    heartCopy.classList.add('heart')
+    heartCopy.style.top = e.changedTouches[0].clientY + "px"
+    heartCopy.style.left = e.changedTouches[0].clientX + "px"
+    heartCopy.style.transform = "translate(-50%, -50%)"
+    heartCopy.style.filter = `hue-rotate(${hueFilterValue}deg)`
+    document.body.appendChild(heartCopy)
+    setTimeout(() => document.body.removeChild(heartCopy), 750)
+    }
+    count++
+}
+)
