@@ -21,6 +21,7 @@ html {
 }
 body {
     background: #0E1116;
+    overflow: hidden;
 }
 .heading {
     font-size: 1.7rem;
@@ -256,11 +257,15 @@ input:-webkit-autofill {
 footer {
     color: var(--secondary-text-color);
     position: absolute;
-    bottom: 40px;
-    text-align: center;
+    cursor: url('/res/heart-icon.svg'), auto;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
     width: 100%;
 }
-footer > a {
+footer > span {
     text-decoration: none;
     color: var(--secondary-text-color);
 }
@@ -271,5 +276,17 @@ footer > a {
     } to {
         opacity: 1;
         transform: translateY(0%);
+    }
+}
+.heart {
+    position: fixed;
+    opacity: 0;
+    animation: fade .8s ease-out 1;
+}
+@keyframes fade {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
     }
 }

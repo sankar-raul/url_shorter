@@ -85,7 +85,8 @@ function clickFunc(element) {
         element.target.style.cursor = "url('/res/cursor.svg'), auto"
     }, 100)
 }
-const elementsToClikAnim = [shortBtn[0], copyButton, shorten, document.getElementById("sankar")]
+document.getElementById("sankar").onclick = () => window.open("https://github.com/sankar-raul")
+const elementsToClikAnim = [shortBtn[0], copyButton, shorten]
 elementsToClikAnim.forEach(el => {
     el.addEventListener('click', e => clickFunc(e))
     }
@@ -97,4 +98,21 @@ document.onclick = () => {
     clickTimeOut = setTimeout(() => {
         document.documentElement.style.cursor = "url('/res/cursor.svg'), auto"
     }, 100)
+}
+// heart animation
+const footer = document.getElementsByTagName("footer")[0]
+let counter = 10
+footer.onmousemove = (e) => {
+    if (counter % 10 == 0) {
+    const hueFilterValue = 360 - (30 * (Math.round(Math.random() * 12)))
+    const heartCopy = document.createElement('img')
+    heartCopy.src = '/res/heart-icon.svg'
+    heartCopy.classList.add('heart')
+    heartCopy.style.top = e.clientY + "px"
+    heartCopy.style.left = e.clientX + "px"
+    heartCopy.style.filter = `hue-rotate(${hueFilterValue}deg)`
+    document.body.appendChild(heartCopy)
+    setTimeout(() => document.body.removeChild(heartCopy), 750)
+    }
+    counter++
 }
