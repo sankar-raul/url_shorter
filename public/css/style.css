@@ -32,9 +32,10 @@ body {
 }
 .nav-bar {
     background-color: #020409;
-    color: #e6edf3;
+    border-bottom: 1.5px solid #30363Df0;
+    color: #b8c0c9;
     position: relative;
-    height: 60px;
+    height: 56px;
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
@@ -156,7 +157,7 @@ input::spelling-error {
     outline: 2px solid transparent;
 }
 .author > .github {
-    opacity: 0.7;
+    opacity: 0.75;
     background-image: url('/res/github-icon.svg');
 }
 .author > .github:hover {
