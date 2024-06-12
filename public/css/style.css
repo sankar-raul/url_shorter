@@ -293,11 +293,28 @@ footer > span {
     position: fixed;
     opacity: 0;
     animation: fade .8s ease-out 1;
+    user-select: none;
+    cursor: url("/res/heart-icon.svg"), auto;
+}
+.clickEffect {
+    position: fixed;
+    opacity: 0;
+    user-select: none;
+    animation: clickEffect .8s ease-out 1;
+}
+@keyframes clickEffect {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
 }
 @keyframes fade {
     from {
         opacity: 1;
     } to {
         opacity: 0;
+        transform: translateY(-40%);
     }
 }

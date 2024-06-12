@@ -10,8 +10,8 @@
     <nav class="nav-bar">
     <p class="heading"><span>Url shorter</span></p>
     <div class="author">
-        <div class="nav-item github" title="open source"></div>
-        <div class="nav-item pic"></div>
+        <div onclick="goto('source')" class="nav-item github" title="open source"></div>
+        <div onclick="goto('github')" class="nav-item pic"></div>
     </div>
     </nav>
     <form id="form">
@@ -29,7 +29,7 @@
         </div>  
     </div>
     <footer>
-       Crafted with ❤️ by&nbsp;<span id="sankar">Sankar</a> :)
+       Crafted with ❤️ by&nbsp;<span onclick="goto('github')" id="sankar">Sankar</a> :)
     </footer>
     <script src="/js/script.js"></script>
 </body>

@@ -76,31 +76,49 @@ window.addEventListener('load', () => {
     copiedCheckPreload = new Image()
     copiedCheckPreload.src = '/res/check.svg'
 })
-document.getElementsByClassName("github")[0].onclick =  () => {
-    window.open('https://github.com/sankar-raul/url_shorter')
-}
-document.getElementsByClassName('pic')[0].onclick = () => {
-    window.open('https://github.com/sankar-raul')
+function goto(destination = "github") {
+    switch (destination) {
+        case "github":
+            setTimeout(() => window.open('https://github.com/sankar-raul'), 800)
+            break
+        case "source":
+            setTimeout(() => window.open('https://github.com/sankar-raul/url_shorter'), 800)
+            break
+        default:
+            window.open('https://github.com/sankar-raul')
+    }
 }
 function clickFunc(element) {
+    // console.log(element)
     element.target.style.cursor = `url(${preloadCursorClicked.src}), auto`
     setTimeout(() => {
         element.target.style.cursor = "url('/res/cursor.svg'), auto"
     }, 100)
 }
-document.getElementById("sankar").onclick = () => window.open("https://github.com/sankar-raul")
-const elementsToClikAnim = [shortBtn[0], copyButton, shorten]
+const elementsToClikAnim = [shortBtn[0], copyButton, shorten, loader[0]]
 elementsToClikAnim.forEach(el => {
     el.addEventListener('click', e => clickFunc(e))
     }
 )
+// onclick heart pop up animation
 let clickTimeOut = null
-document.onclick = () => {
+document.onclick = (e) => {
+    if (e.pointerType != "" && (e.target.type != "text")) {
     clickTimeOut ?? clearTimeout(clickTimeOut)
+    const hueFilterValue = 360 - (30 * (Math.round(Math.random() * 12)))
+    const heartCopy = document.createElement('img')
+    heartCopy.src = '/res/heart-icon.svg'
+    heartCopy.classList.add('clickEffect')
+    heartCopy.style.top = e.clientY + "px"
+    heartCopy.style.left = e.clientX + "px"
+    heartCopy.style.filter = `hue-rotate(${hueFilterValue}deg)`
+    document.body.appendChild(heartCopy)
+    setTimeout(() => document.body.removeChild(heartCopy), 750)
     document.documentElement.style.cursor = `url(${preloadCursorClicked.src}), auto`
     clickTimeOut = setTimeout(() => {
         document.documentElement.style.cursor = "url('/res/cursor.svg'), auto"
     }, 100)
+}
 }
 // heart animation
 const footer = document.getElementsByTagName("footer")[0]
@@ -113,7 +131,7 @@ footer.addEventListener('mousemove', (e) => {
     heartCopy.classList.add('heart')
     heartCopy.style.top = e.clientY + "px"
     heartCopy.style.left = e.clientX + "px"
-    heartCopy.style.filter = `hue-rotate(${hueFilterValue}deg)`
+    heartCopy.style.filter = `hue-rotate(${hueFilterValue}deg) brightness(90%)`
     document.body.appendChild(heartCopy)
     setTimeout(() => document.body.removeChild(heartCopy), 750)
     }
