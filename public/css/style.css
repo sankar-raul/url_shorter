@@ -297,11 +297,27 @@ footer > span {
     user-select: none;
     cursor: url("/res/heart-icon.svg"), auto;
 }
+.heart-mobile {
+    position: fixed;
+    opacity: 0;
+    animation: touchEffect .8s ease-out 1;
+    user-select: none;
+    transform: translate(-50%, -50%);
+
+}
 .clickEffect {
     position: fixed;
     opacity: 0;
     user-select: none;
     animation: clickEffect .8s ease-out 1;
+}
+@keyframes touchEffect {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+        transform: translate(-50%, -140%);
+    }
 }
 @keyframes clickEffect {
     from {

@@ -144,10 +144,10 @@ footer.addEventListener('touchmove', (e) => {
     const hueFilterValue = 360 - (30 * (Math.round(Math.random() * 12)))
     const heartCopy = document.createElement('img')
     heartCopy.src = '/res/heart-icon.svg'
-    heartCopy.classList.add('heart')
+    heartCopy.classList.add('heart-mobile')
     heartCopy.style.top = e.changedTouches[0].clientY + "px"
     heartCopy.style.left = e.changedTouches[0].clientX + "px"
-    heartCopy.style.transform = "translate(-50%, -50%)"
+    heartCopy.style.transform = 
     heartCopy.style.filter = `hue-rotate(${hueFilterValue}deg)`
     document.body.appendChild(heartCopy)
     setTimeout(() => document.body.removeChild(heartCopy), 750)
