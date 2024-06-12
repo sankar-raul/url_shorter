@@ -131,7 +131,7 @@ footer.addEventListener('mousemove', (e) => {
     heartCopy.classList.add('heart')
     heartCopy.style.top = e.clientY + "px"
     heartCopy.style.left = e.clientX + "px"
-    heartCopy.style.filter = `hue-rotate(${hueFilterValue}deg) brightness(90%)`
+    heartCopy.style.filter = `hue-rotate(${hueFilterValue}deg) brightness(150%)`
     document.body.appendChild(heartCopy)
     setTimeout(() => document.body.removeChild(heartCopy), 750)
     }
