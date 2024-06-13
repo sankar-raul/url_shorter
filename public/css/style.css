@@ -17,7 +17,7 @@
     --link-color: #4493f8;
 }
 html {
-    cursor: url('/res/cursor.svg'), auto;
+    cursor: url('/res/cursor.svg') 10 10, auto;
 }
 body {
     background: #0E1116;
@@ -90,7 +90,7 @@ input::spelling-error {
     border: 0px solid transparent;
     color: #f0f0f0;
     font-weight: 600;
-    cursor: url('/res/cursor.svg'), auto;
+    cursor: url('/res/cursor.svg') 10 10, auto;
 }
 .short-btn:hover, .short-btn:active, .short-btn:focus {
     outline: none;
@@ -153,6 +153,7 @@ input::spelling-error {
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-size: cover;
+    background-repeat: no-repeat;
     transition: 0.5s;
     outline: 2px solid transparent;
 }
@@ -160,7 +161,14 @@ input::spelling-error {
     opacity: 0.75;
     background-image: url('/res/github-icon.svg');
 }
-.author > .github:hover {
+.author > .facebook {
+    opacity: 0.75;
+    background-size: 120% 120%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: url('/res/facebook.svg');
+}
+.author > .github:hover, .author > .facebook:hover {
     opacity: 1;
 }
 .author > .pic {
@@ -168,7 +176,7 @@ input::spelling-error {
     background-image: url('/res/developer.png');
 }
 .author > .pic:hover {
-    outline: 2px solid #449eff;
+    outline: 2px solid #4765ff;
     filter: grayscale(0%);
 }
 .short-url {
@@ -203,7 +211,7 @@ input::spelling-error {
     outline: none;
     border: 2px solid transparent;
     aspect-ratio: 1 / 1;
-    cursor: url('/res/cursor.svg'), auto;
+    cursor: url('/res/cursor.svg') 10 10, auto;
     background-color: transparent;
 }
 .copy-button > img {
@@ -228,7 +236,7 @@ input::spelling-error {
     text-decoration: none;
     white-space: nowrap;
     color: var(--link-color);
-    cursor: url('/res/cursor.svg'), auto;
+    cursor: url('/res/cursor.svg') 10 10, auto;
     border-radius: 5px 0px 0px 5px;
     /* text-overflow: ellipsis; */
     background-repeat: repeat-x;
@@ -309,6 +317,11 @@ footer > span {
     position: fixed;
     opacity: 0;
     user-select: none;
+    width: 10px;
+    transform: translate(-40%, -40%);
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--secondary-text-color);
+    filter: brightness(160%);
     animation: clickEffect .8s ease-out 1;
 }
 @keyframes touchEffect {
@@ -322,9 +335,10 @@ footer > span {
 @keyframes clickEffect {
     from {
         opacity: 1;
+        transform: translate(-40%, -40%);
     } to {
         opacity: 0;
-        transform: translateY(-100%);
+        transform: translate(-40%, -500%) rotate(200deg) scale(2);
     }
 }
 @keyframes fade {
@@ -332,6 +346,6 @@ footer > span {
         opacity: 1;
     } to {
         opacity: 0;
-        transform: translateY(-40%);
+        transform: translateY(-60%);
     }
 }
