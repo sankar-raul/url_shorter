@@ -124,7 +124,7 @@ document.onclick = (e) => {
 }
 // heart animation
 const footer = document.getElementsByTagName("footer")[0]
-let counter = gap = 5
+let counter = gap = 10
 footer.addEventListener('mousemove', (e) => {
     if (counter % gap == 0) {
     const hueFilterValue = 360 - (30 * (Math.round(Math.random() * 12)))
@@ -140,9 +140,9 @@ footer.addEventListener('mousemove', (e) => {
     counter++
 }
 )
-let count = 8
+let count = appendGap = 8
 footer.addEventListener('touchmove', (e) => {
-    if (count % 8 == 0) {
+    if (count % appendGap == 0) {
     const hueFilterValue = 360 - (30 * (Math.round(Math.random() * 12)))
     const heartCopy = document.createElement('img')
     heartCopy.src = '/res/heart-icon.svg'
