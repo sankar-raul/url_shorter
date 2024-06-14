@@ -34,10 +34,11 @@ body {
     background-color: #020409;
     border-bottom: 1.5px solid #30363Df0;
     color: #b8c0c9;
+    width: 100%;
     position: relative;
     height: 56px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr max-content;
 }
 form {
     width: clamp(300px, 65%, 600px);
