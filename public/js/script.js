@@ -85,7 +85,7 @@ function goto(destination = "github") {
             setTimeout(() => window.open('https://github.com/sankar-raul/url_shorter'), 800)
             break
         case "facebook":
-            setTimeout(() => window.open('https://facebook.com/sankarraul.dev'), 800)
+            setTimeout(() => window.open('https://facebook.com/sankarraul.me'), 800)
             break
         default:
             window.open('https://github.com/sankar-raul')
