@@ -350,3 +350,18 @@ footer > span {
         transform: translateY(-60%);
     }
 }
+.mouse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transition: var(--t) ease-out;
+    aspect-ratio: 1 / 1;
+    width: var(--w);
+    border: 2px solid #8d96a0;
+    pointer-events: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    opacity: .5;
+    z-index: 1;
+}

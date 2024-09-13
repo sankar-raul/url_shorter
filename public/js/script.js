@@ -124,7 +124,8 @@ document.onclick = (e) => {
 }
 // heart animation
 const footer = document.getElementsByTagName("footer")[0]
-let counter = gap = 10
+let counter = 10
+let gap = counter
 footer.addEventListener('mousemove', (e) => {
     if (counter % gap == 0) {
     const hueFilterValue = 360 - (30 * (Math.round(Math.random() * 12)))
@@ -140,7 +141,8 @@ footer.addEventListener('mousemove', (e) => {
     counter++
 }
 )
-let count = appendGap = 8
+let count = 8
+let appendGap = count
 footer.addEventListener('touchmove', (e) => {
     if (count % appendGap == 0) {
     const hueFilterValue = 360 - (30 * (Math.round(Math.random() * 12)))
@@ -157,3 +159,9 @@ footer.addEventListener('touchmove', (e) => {
     count++
 }
 )
+// mouse follow
+const mouse = document.querySelectorAll('.mouse')
+    document.addEventListener('mousemove', (e) => {
+        mouse[0].style.transform = `translate(${e.clientX - 25}px, ${e.clientY - 25}px)`
+        mouse[1].style.transform = `translate(${e.clientX - 7.5}px, ${e.clientY - 7.5}px)`
+    })
