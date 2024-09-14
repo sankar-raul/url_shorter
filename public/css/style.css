@@ -319,6 +319,7 @@ footer > span {
     opacity: 0;
     user-select: none;
     width: 10px;
+    pointer-events: none;
     transform: translate(-40%, -40%);
     aspect-ratio: 1 / 1;
     border: 1px solid var(--secondary-text-color);

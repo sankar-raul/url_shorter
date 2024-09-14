@@ -76,21 +76,22 @@ window.addEventListener('load', () => {
     copiedCheckPreload = new Image()
     copiedCheckPreload.src = '/res/check.svg'
 })
-function goto(destination = "github") {
+function follow(destination = "github") {
     switch (destination) {
         case "github":
-            setTimeout(() => window.open('https://github.com/sankar-raul'), 800)
+            setTimeout(() => window.open('https://github.com/sankar-raul'), 300)
             break
         case "source":
-            setTimeout(() => window.open('https://github.com/sankar-raul/url_shorter'), 800)
+            setTimeout(() => window.open('https://github.com/sankar-raul/url_shorter'), 300)
             break
         case "facebook":
-            setTimeout(() => window.open('https://facebook.com/sankarraul.me'), 800)
+            setTimeout(() => window.open('https://facebook.com/sankarraul.me'), 300)
             break
         default:
             window.open('https://github.com/sankar-raul')
     }
 }
+window.follow = follow
 function clickFunc(element) {
     // console.log(element)
     element.target.style.cursor = `url(${preloadCursorClicked.src}) 10 10, auto`
