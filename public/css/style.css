@@ -278,7 +278,6 @@ input:-webkit-autofill {
 footer {
     color: var(--secondary-text-color);
     position: absolute;
-    cursor: url('/res/heart-icon.svg'), auto;
     bottom: 0px;
     display: flex;
     justify-content: center;
@@ -304,7 +303,7 @@ footer > span {
     opacity: 0;
     animation: fade .8s ease-out 1;
     user-select: none;
-    cursor: url("/res/heart-icon.svg"), auto;
+    pointer-events: none;
 }
 .heart-mobile {
     position: fixed;
