@@ -37,10 +37,15 @@ To run the URL Shortener on your local machine, follow these instructions:
 4. **Set up the database:**
     - Run the `dbsetup.sql` file to set up the database schema. You can do this using a tool like MySQL Workbench, phpMyAdmin, or the MySQL command line.
     - Or, using the terminal (ensure that MySQL is installed):
-    ```bash
-    mysql -u <your_database_username> -p url_shorter < dbsetup.sql
+    - For powershell
+    ```powershell
+    mysql -u <your_database_username> -p -e "$(Get-Content -Raw -Path .\dbsetup.sql)"
     ```
-
+    - Or, using the Mac | Linux | cmd terminal (ensure that MySQL is installed):
+    ```bash
+    mysql -u <your_database_username> -p < dbsetup.sql
+    ```
+    
     Replace `<your_database_username>` with your actual MySQL username.
 
 5. **Set up the environment variables:**
