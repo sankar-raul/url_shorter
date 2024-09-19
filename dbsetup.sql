@@ -5,4 +5,3 @@ create table if not exists urls (
     url varchar(255) not null,
     visits int default 0
     );
--- select * from urls; 
