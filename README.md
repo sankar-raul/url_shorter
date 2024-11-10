@@ -49,10 +49,10 @@ To run the URL Shortener on your local machine, follow these instructions:
     Create a `.env` file in the root directory with the following content:
 
     ```env
-    USER="<your_database_username>"
-    HOST="<your_database_host>"
-    PASSWORD="<your_database_password>"
-    DB="url_shorter"
+    USER=<your_database_username>
+    HOST=<your_database_host>
+    PASSWORD=<your_database_password>
+    DB=url_shorter
     PORT=8080  # Port for the URL web service
     DBPORT=<your_database_port>  # Optional: Port for the database connection, if required
     ```
