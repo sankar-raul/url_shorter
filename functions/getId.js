@@ -21,8 +21,9 @@ const generateUniqueId = async (len = 6) => {
         if (result.length > 0) {
           console.log(result)
           fetch()
+        } else {
+          resolve(_id)
         }
-        resolve(_id)
       })
     }
     fetch()
